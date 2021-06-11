@@ -1,9 +1,6 @@
 from flask import Flask, request
 from planilha import Planilha
 import json
-import subprocess
-
-subprocess.run("python atualizaTabela.py ", shell=True)
 
 
 app = Flask("Rastreamento")
