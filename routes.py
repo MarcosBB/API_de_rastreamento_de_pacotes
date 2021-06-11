@@ -3,7 +3,7 @@ from planilha import Planilha
 import json
 
 
-app = Flask("Rastreamento")
+app = Flask(__name__)
 base_teste = Planilha('base_teste.xlsx')
 
 @app.route("/busca_todas_atualizacoes", methods=["POST"])
@@ -39,4 +39,6 @@ def geraResponse(status, mensagem, nome_do_conteudo=False, conteudo=False):
     
     return response
 
-app.run()
+if __name__ == "__main__":
+    app.run()
+
