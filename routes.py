@@ -1,6 +1,5 @@
 from flask import Flask, request
 from main import buscaTodas, buscaUltima
-import pandas as pd
 import json
 
 app = Flask("Rastreamento")
@@ -15,7 +14,6 @@ def buscaTodasAtualizacoes():
     linhas = buscaTodas(body["id"])
 
     return json.dumps(geraResponse(200, "Sucesso!!!", "linhas", linhas))
-    #return geraResponse(200, "Sucesso!!!", "linhas", linhas)
 
 
 @app.route("/busca_ultima_atualizacao", methods=["POST"])
@@ -28,7 +26,6 @@ def buscaUltimaAtualizacao():
     linha = buscaUltima(body["id"])
 
     return json.dumps(geraResponse(200, "Sucesso!!!", "linha", linha))
-    #return geraResponse(200, "Sucesso!!!", "linha", linha)
 
 def geraResponse(status, mensagem, nome_do_conteudo=False, conteudo=False):
     response = {}
