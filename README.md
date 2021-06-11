@@ -10,5 +10,5 @@ Para usar você deve:
 
 ## Rotas
 
-/busca_todas_atualizacoes
-/busca_ultima_atualizacao
+`/busca_todas_atualizacoes`
+`/busca_ultima_atualizacao`
