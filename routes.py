@@ -1,9 +1,13 @@
 from flask import Flask, request
-from main import buscaTodas, buscaUltima
-import pandas as pd
+from planilha import Planilha
 import json
+import subprocess
+
+subprocess.run("python atualizaTabela.py ", shell=True)
+
 
 app = Flask("Rastreamento")
+base_teste = Planilha('base_teste.xlsx')
 
 @app.route("/busca_todas_atualizacoes", methods=["POST"])
 def buscaTodasAtualizacoes():
@@ -12,10 +16,9 @@ def buscaTodasAtualizacoes():
     if("id" not in body):
         return geraResponse(400, "O parametro id e obrigatorio")
 
-    linhas = buscaTodas(body["id"])
+    linhas = base_teste.buscaTodas(body["id"])
 
     return json.dumps(geraResponse(200, "Sucesso!!!", "linhas", linhas))
-    #return geraResponse(200, "Sucesso!!!", "linhas", linhas)
 
 
 @app.route("/busca_ultima_atualizacao", methods=["POST"])
@@ -25,10 +28,9 @@ def buscaUltimaAtualizacao():
     if("id" not in body):
         return geraResponse(400, "O parametro id e obrigatorio")
 
-    linha = buscaUltima(body["id"])
+    linha = base_teste.buscaUltima(body["id"])
 
     return json.dumps(geraResponse(200, "Sucesso!!!", "linha", linha))
-    #return geraResponse(200, "Sucesso!!!", "linha", linha)
 
 def geraResponse(status, mensagem, nome_do_conteudo=False, conteudo=False):
     response = {}
