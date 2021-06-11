@@ -1,5 +1,5 @@
 import threading
-from routes2 import base_teste
+from routes import base_teste
 import time
 
 while True:
