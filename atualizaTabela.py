@@ -1,4 +1,3 @@
-import threading
 from routes import base_teste
 import time
 
