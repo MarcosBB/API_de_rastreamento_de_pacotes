@@ -1,6 +1,6 @@
-# API da L'Auto
+# API de rastreamento de pacotes
  
-É uma `API` feita em `Python` e `Flask` que pesquisa informações em uma tabela `.xlsx` e retorna o resultado da pesquisa.
+É uma `API` feita em `Python` e `Flask` que pesquisa informações de rastreamento de pacotes em uma tabela `.xlsx` e retorna o resultado da pesquisa.
 
 ## Como usar
 
