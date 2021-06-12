@@ -34,3 +34,9 @@ Para usar você deve:
 
 ### Exemplos de retorno da API 
 Usei o programa Insomnia para isso.
+
+![image](https://user-images.githubusercontent.com/50207805/121764127-64bd2f00-cb0f-11eb-92f2-2d3a7b5df40b.png)
+![image](https://user-images.githubusercontent.com/50207805/121764120-5bcc5d80-cb0f-11eb-822f-3215b9da6752.png)
+![image](https://user-images.githubusercontent.com/50207805/121764099-3c353500-cb0f-11eb-8783-25b995a6c2ec.png)
+![image](https://user-images.githubusercontent.com/50207805/121764106-4c4d1480-cb0f-11eb-8865-656b801e4226.png)
+
