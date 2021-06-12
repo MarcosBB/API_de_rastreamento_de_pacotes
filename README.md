@@ -11,23 +11,23 @@ Para usar você deve:
 
 ### Rotas
 #### Com método GET
-    Coloque o id que pretende pesquisar no lugar de `<id>` na url.
-    Exemplo:
-    ```
-    http://127.0.0.1:5000/busca-atualizacoes/last/5513bfab82f7a76f4b6127dc9d46c134
-    ```
+Coloque o id que pretende pesquisar no lugar de `<id>` na url.
+Exemplo:
+```
+http://127.0.0.1:5000/busca-atualizacoes/last/5513bfab82f7a76f4b6127dc9d46c134
+```
 
 * `/busca-atualizacoes/all/<id>/` Busca todas as atualizações de rastreamento do pacote.
 * `/busca-atualizacoes/last/<id>/` Busca a ultima atualização de restreamento do pacote.
 
 #### Com método POST
-    Coloque o id que pretende pesquisar no formato `JSON` no payload da requisição na sua aplição.
-    Exemplo:
-    ```
-    {
-		"id": "5513bfab82f7a76f4b6127dc9d46c134"
-    }
-    ```
+Coloque o id que pretende pesquisar no formato `JSON` no payload da requisição na sua aplição.
+Exemplo:
+```
+{
+	"id": "5513bfab82f7a76f4b6127dc9d46c134"
+}
+```
 
 * `/busca-atualizacoes/all` Busca todas as atualizações de rastreamento do pacote.
 * `/busca-atualizacoes/last` Busca a ultima atualização de restreamento do pacote.
