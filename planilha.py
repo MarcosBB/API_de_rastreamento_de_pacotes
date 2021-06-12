@@ -18,7 +18,8 @@ class Planilha:
 
     def buscaUltima(self, id):
         ultimaAtualizacao = self.buscaTodas(id)
-        ultimaAtualizacao = ultimaAtualizacao[len(ultimaAtualizacao)-1]
+        if ultimaAtualizacao != []:
+            ultimaAtualizacao = ultimaAtualizacao[len(ultimaAtualizacao)-1]
 
         return ultimaAtualizacao
 
@@ -29,4 +30,3 @@ class Planilha:
             print("Update de " +  self.arquivo + " concluido com sucesso!!!")
         else:
             print("Não há atualizações pendentes")
-

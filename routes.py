@@ -6,28 +6,46 @@ import json
 app = Flask(__name__)
 base_teste = Planilha('base_teste.xlsx')
 
-@app.route("/busca_todas_atualizacoes", methods=["POST"])
-def buscaTodasAtualizacoes():
-    body = request.get_json()
-    
-    if("id" not in body):
-        return json.dumps(geraResponse(400, "O parametro id e obrigatorio"))
 
+@app.route("/busca-atualizacoes/all/<id>/", methods=["GET"])
+def buscaTodasAtualizacoesGET(id):
+    linhas = base_teste.buscaTodas(id)
+
+    if(linhas == []):
+        return json.dumps(geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa"))
+    
+    return json.dumps(geraResponse("Busca bem sucedida", "Resultado encontrado", "linhas", linhas))
+
+        
+@app.route("/busca-atualizacoes/all", methods=["POST"])
+def buscaTodasAtualizacoesPOST():
+    body = request.get_json()
     linhas = base_teste.buscaTodas(body["id"])
 
-    return json.dumps(geraResponse(200, "Sucesso!!!", "linhas", linhas))
+    if(linhas == [] or "id" not in body):
+        return json.dumps(geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa"))
     
+    return json.dumps(geraResponse("Busca bem sucedida", "Resultado encontrado", "linhas", linhas))
 
-@app.route("/busca_ultima_atualizacao", methods=["POST"])
-def buscaUltimaAtualizacao():
+
+@app.route("/busca-atualizacoes/last/<id>/", methods=["GET"])
+def buscaUltimaAtualizacaoGET(id):
+    linha = base_teste.buscaUltima(id)
+
+    if(linha == []):
+        return json.dumps(geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa"))
+
+    return json.dumps(geraResponse("Busca bem sucedida", "Resultado encontrado", "linha", linha))
+
+@app.route("/busca-atualizacoes/last", methods=["POST"])
+def buscaUltimaAtualizacaoPOST():
     body = request.get_json()
-    
-    if("id" not in body):
-        return json.dumps(geraResponse(400, "O parametro id e obrigatorio"))
-
     linha = base_teste.buscaUltima(body["id"])
 
-    return json.dumps(geraResponse(200, "Sucesso!!!", "linha", linha))
+    if(linha == [] or "id" not in body):
+        return json.dumps(geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa"))
+
+    return json.dumps(geraResponse("Busca bem sucedida", "Resultado encontrado", "linha", linha))
 
 def geraResponse(status, mensagem, nome_do_conteudo=False, conteudo=False):
     response = {}
