@@ -11,19 +11,19 @@ def buscaTodasAtualizacoes():
     body = request.get_json()
     
     if("id" not in body):
-        return geraResponse(400, "O parametro id e obrigatorio")
+        return json.dumps(geraResponse(400, "O parametro id e obrigatorio"))
 
     linhas = base_teste.buscaTodas(body["id"])
 
     return json.dumps(geraResponse(200, "Sucesso!!!", "linhas", linhas))
-
+    
 
 @app.route("/busca_ultima_atualizacao", methods=["POST"])
 def buscaUltimaAtualizacao():
     body = request.get_json()
     
     if("id" not in body):
-        return geraResponse(400, "O parametro id e obrigatorio")
+        return json.dumps(geraResponse(400, "O parametro id e obrigatorio"))
 
     linha = base_teste.buscaUltima(body["id"])
 
@@ -40,5 +40,5 @@ def geraResponse(status, mensagem, nome_do_conteudo=False, conteudo=False):
     return response
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
