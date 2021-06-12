@@ -1,6 +1,6 @@
 # API da L'Auto
  
-É uma API feita em Python e Flask que pesquisa informações em uma tabela `.xlsx` e retorna o resultado da pesquisa.
+É uma `API` feita em `Python` e `Flask` que pesquisa informações em uma tabela `.xlsx` e retorna o resultado da pesquisa.
 
 ## Como usar
 
