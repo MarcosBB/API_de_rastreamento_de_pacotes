@@ -10,5 +10,12 @@ Para usar você deve:
 
 ## Rotas
 
-1. `/busca_todas_atualizacoes` Busca todas as atualizações de rastreamento do pacote
-3. `/busca_ultima_atualizacao` Busca a ultima atualização de restreamento do pacote
+* `/busca_todas_atualizacoes` Busca todas as atualizações de rastreamento do pacote
+* `/busca_ultima_atualizacao` Busca a ultima atualização de restreamento do pacote
+
+### Exemplos de retorno da API 
+Usei o programa Insomnia para isso.
+![image](https://user-images.githubusercontent.com/50207805/121727242-a622ef80-cab9-11eb-9faa-86f10a8dba49.png)
+
+![image](https://user-images.githubusercontent.com/50207805/121727357-cce12600-cab9-11eb-8d8e-20d8c0cf35bc.png)
+
