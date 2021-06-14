@@ -5,9 +5,9 @@
 ## Como usar
 
 Para rodar o servidor localmente você deve:
-1. Instalar o Python.
-2. Instalar a biblioteca Flask. (`pip install Flask`)
-3. Rodar o programa `routes.py`. (`python routes.py`)
+1. Instalar o Python;
+2. Instalar a biblioteca Flask (`pip install Flask`);
+3. Rodar o programa `routes.py`. (`python routes.py`);
 4. Usar as [rotas](https://github.com/MarcosBB/API-da-L-Auto/blob/main/README.md#rotas) na sua aplicação ou, se quiser, pode testar rodando o arquivo `teste.py` em outro cmd.
 
 ### Rotas
