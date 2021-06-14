@@ -1,13 +1,20 @@
 # API de rastreamento de pacotes
  
-É uma `API` feita em `Python` e `Flask` que pesquisa informações de rastreamento de pacotes em uma tabela `.xlsx` e retorna o resultado da pesquisa.
+É uma `API` feita em `Python` e `Flask` que pesquisa informações de rastreamento de pacotes em uma tabela `.xlsx` e retorna o resultado.
 
 ## Como usar
 
-Para usar você deve:
-1. Instalar a biblioteca Flask. (pip install Flask)
-2. Rodar o programa `routes.py`. (python routes.py)
-3. Usar as [rotas](https://github.com/MarcosBB/API-da-L-Auto/blob/main/README.md#rotas) na sua aplicação ou, se quiser, pode testar rodando o arquivo `teste.py` em outro cmd.
+Para usar a API basta usar a URL a seguir e adicionar as [rotas](https://github.com/MarcosBB/API-da-L-Auto/blob/main/README.md#rotas) no final dependendo do uso que queira na sua aplicação.
+
+```
+bla bla bla bla
+```
+
+Para rodar o servidor localmente você deve:
+1. Instalar o Python;
+2. Instalar as bibliotecas Flask, Flask-restful e Pandas ou somente rode o seguinte comando no cmd `pip install -r requirements.txt`;
+3. Rodar o programa `rastreamento_API.py`. (`python rastreamento_API.py`);
+4. Usar as [rotas](https://github.com/MarcosBB/API-da-L-Auto/blob/main/README.md#rotas) na sua aplicação.
 
 ### Rotas
 #### Com método GET
@@ -39,4 +46,3 @@ Usei o programa Insomnia para isso.
 ![image](https://user-images.githubusercontent.com/50207805/121764120-5bcc5d80-cb0f-11eb-822f-3215b9da6752.png)
 ![image](https://user-images.githubusercontent.com/50207805/121764099-3c353500-cb0f-11eb-8783-25b995a6c2ec.png)
 ![image](https://user-images.githubusercontent.com/50207805/121764106-4c4d1480-cb0f-11eb-8865-656b801e4226.png)
-
