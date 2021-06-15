@@ -1,0 +1,1 @@
+web: gunicorn rastreamento_API.wsgi
