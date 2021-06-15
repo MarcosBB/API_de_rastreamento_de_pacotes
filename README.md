@@ -7,7 +7,7 @@
 Para usar a API basta usar a URL a seguir e adicionar as [rotas](https://github.com/MarcosBB/API-da-L-Auto/blob/main/README.md#rotas) no final dependendo do uso que queira na sua aplicação.
 
 ```
-bla bla bla bla
+https://rastreamento-api.herokuapp.com
 ```
 
 Para rodar o servidor localmente você deve:
