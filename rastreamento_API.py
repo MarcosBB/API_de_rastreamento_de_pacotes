@@ -14,7 +14,7 @@ class BuscaTodasAtualizacoesGET(Resource):
         if linhas == []:
             return geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa")
         
-        return geraResponse("Busca bem sucedida", "Resultado encontrado", "linhas", linhas)
+        return geraResponse("Busca bem sucedida", "Resultado encontrado", "Resultado", linhas)
 
 class BuscaUltimaAtualizacaoGET(Resource):
     def get(self, id):
@@ -23,7 +23,7 @@ class BuscaUltimaAtualizacaoGET(Resource):
         if(linha == []):
             return geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa")
 
-        return geraResponse("Busca bem sucedida", "Resultado encontrado", "linha", linha)
+        return geraResponse("Busca bem sucedida", "Resultado encontrado", "Resultado", linha)
 
 class buscaTodasAtualizacoesPOST(Resource):
     def post(self):
@@ -38,7 +38,7 @@ class buscaTodasAtualizacoesPOST(Resource):
             if linhas == []:
                 return geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa")
             
-            return geraResponse("Busca bem sucedida", "Resultado encontrado", "linhas", linhas)
+            return geraResponse("Busca bem sucedida", "Resultado encontrado", "Resultado", linhas)
 
 class buscaUltimaAtualizacaoPOST(Resource):
     def post(self):
@@ -52,7 +52,7 @@ class buscaUltimaAtualizacaoPOST(Resource):
             if linha == []:
                 return geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa")
 
-            return geraResponse("Busca bem sucedida", "Resultado encontrado", "linha", linha)
+            return geraResponse("Busca bem sucedida", "Resultado encontrado", "Resultado", linha)
 
 
 def geraResponse(status, mensagem, nome_do_conteudo=False, conteudo=False):
@@ -73,4 +73,4 @@ api.add_resource(buscaUltimaAtualizacaoPOST, '/busca-atualizacoes/last/')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
