@@ -15,6 +15,12 @@ Exemplo:
 ```
 https://rastreamento-api.herokuapp.com/busca-atualizacoes/all/e8f37e1f683e6c472721010956ea5798/
 ```
+
+Exemplo:
+
+```
+https://rastreamento-api.herokuapp.com/busca-atualizacoes/all/e8f37e1f683e6c472721010956ea5798/
+```
 Para rodar o servidor localmente você deve:
 1. Instalar o Python;
 2. Instalar as bibliotecas Flask, Flask-restful e Pandas ou somente rode o seguinte comando no cmd `pip install -r requirements.txt`;
@@ -43,6 +49,11 @@ Exemplo:
 
 * `/busca-atualizacoes/all/` Busca todas as atualizações de rastreamento do pacote.
 * `/busca-atualizacoes/last/` Busca a ultima atualização de restreamento do pacote.
+
+### Insomnia
+Para testar essa API importe os testes do insomnia no seu programa.
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Rastreamento_API&uri=https%3A%2F%2Fraw.githubusercontent.com%2FMarcosBB%2FAPI_de_rastreamento_de_pacotes%2Fmain%2Finsomnia%2FInsomnia_2021-06-15.json)
 
 ### Exemplos de retorno da API 
 Usei o programa Insomnia para isso.
