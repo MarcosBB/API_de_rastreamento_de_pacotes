@@ -1,1 +1,1 @@
-web: gunicorn rastreamento_API.wsgi
+web: gunicorn rastreamento_API:app
