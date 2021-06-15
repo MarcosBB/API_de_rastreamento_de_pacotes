@@ -2,9 +2,20 @@
  
 É uma `API` feita em `Python` e `Flask` que pesquisa informações de rastreamento de pacotes em uma tabela `.xlsx` e retorna o resultado.
 
+## Sumário
+
+- [Como usar](#como-usar)
+	- [Rotas](#rotas)
+		- [Com método GET](#com-método-get)
+		- [Com método POST](#com-método-post)
+	- [Insomnia](#insomnia)
+	- [Exemplos de retorno da API](#exemplos-de-retorno-da-api)
+
+
+
 ## Como usar
 
-Para usar a API basta usar a URL a seguir e adicionar as [rotas](https://github.com/MarcosBB/API-da-L-Auto/blob/main/README.md#rotas) no final dependendo do uso que queira na sua aplicação.
+Para usar a API basta usar a URL a seguir e adicionar as [rotas](#rotas) no final dependendo do uso que queira na sua aplicação.
 
 ```
 https://rastreamento-api.herokuapp.com
@@ -20,7 +31,7 @@ Para rodar o servidor localmente você deve:
 1. Instalar o Python;
 2. Instalar as bibliotecas Flask, Flask-restful e Pandas ou somente rode o seguinte comando no cmd `pip install -r requirements.txt`;
 3. Rodar o programa `rastreamento_API.py`. (`python rastreamento_API.py`);
-4. Usar as [rotas](https://github.com/MarcosBB/API-da-L-Auto/blob/main/README.md#rotas) na sua aplicação.
+4. Usar as [rotas](#rotas) na sua aplicação.
 
 ### Rotas
 #### Com método GET
