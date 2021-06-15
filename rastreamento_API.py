@@ -31,7 +31,7 @@ class buscaTodasAtualizacoesPOST(Resource):
         
 
         if  "id" not in body:
-            return geraResponse("Busca mal sucedida", "Deve contar o ID.")
+            return geraResponse("Busca mal sucedida", "Deve conter o ID.")
         else:
             linhas = base_teste.buscaTodas(body["id"])
         
@@ -45,7 +45,7 @@ class buscaUltimaAtualizacaoPOST(Resource):
         body = request.get_json()
 
         if  "id" not in body:
-            return geraResponse("Busca mal sucedida", "Deve contar o ID.")
+            return geraResponse("Busca mal sucedida", "Deve conter o ID.")
         else:
             linha = base_teste.buscaUltima(body["id"])
             
