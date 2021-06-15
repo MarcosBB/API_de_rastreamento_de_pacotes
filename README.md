@@ -62,9 +62,10 @@ Exemplo:
 * `/busca-atualizacoes/last/` Busca a ultima atualização de restreamento do pacote.
 
 ### Insomnia
-Para testar essa API importe os testes do insomnia no seu programa.
+Se quiser testar a API você mesmo usando o Insomnia clicke no botão abaixo:
 
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Rastreamento_API&uri=https%3A%2F%2Fraw.githubusercontent.com%2FMarcosBB%2FAPI_de_rastreamento_de_pacotes%2Fmain%2Finsomnia%2FInsomnia_2021-06-15.json)
+
 
 ### Exemplos de retorno da API 
 Usei o programa Insomnia para isso.
