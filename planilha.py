@@ -23,10 +23,4 @@ class Planilha:
 
         return ultimaAtualizacao
 
-    def atualizar(self):
-        atualizacao = pd.read_excel (rf'{self.arquivo}')
-        if atualizacao.shape != self.data.shape:
-            self.data = atualizacao
-            print("Update de " +  self.arquivo + " concluido com sucesso!!!")
-        else:
-            print("Não há atualizações pendentes")
+
