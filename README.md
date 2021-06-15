@@ -10,6 +10,11 @@ Para usar a API basta usar a URL a seguir e adicionar as [rotas](https://github.
 https://rastreamento-api.herokuapp.com
 ```
 
+Exemplo:
+
+```
+https://rastreamento-api.herokuapp.com/busca-atualizacoes/all/e8f37e1f683e6c472721010956ea5798/
+```
 Para rodar o servidor localmente você deve:
 1. Instalar o Python;
 2. Instalar as bibliotecas Flask, Flask-restful e Pandas ou somente rode o seguinte comando no cmd `pip install -r requirements.txt`;
