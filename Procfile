@@ -1,1 +1,1 @@
-web: gunicorn rastreamento_API:app
+web: gunicorn rastreamento_API:app --timeout 90
