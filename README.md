@@ -36,8 +36,8 @@ Exemplo:
 }
 ```
 
-* `/busca-atualizacoes/all` Busca todas as atualizações de rastreamento do pacote.
-* `/busca-atualizacoes/last` Busca a ultima atualização de restreamento do pacote.
+* `/busca-atualizacoes/all/` Busca todas as atualizações de rastreamento do pacote.
+* `/busca-atualizacoes/last/` Busca a ultima atualização de restreamento do pacote.
 
 ### Exemplos de retorno da API 
 Usei o programa Insomnia para isso.

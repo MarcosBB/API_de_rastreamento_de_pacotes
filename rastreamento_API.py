@@ -1,51 +1,59 @@
 from flask import Flask, request
+from flask_restful import Resource, Api
 from planilha import Planilha
-import json
-
 
 app = Flask(__name__)
+api = Api(app)
+
 base_teste = Planilha('base_teste.xlsx')
 
+class BuscaTodasAtualizacoesGET(Resource):
+    def get(self, id):
+        linhas = base_teste.buscaTodas(id)
 
-@app.route("/busca-atualizacoes/all/<id>/", methods=["GET"])
-def buscaTodasAtualizacoesGET(id):
-    linhas = base_teste.buscaTodas(id)
-
-    if(linhas == []):
-        return json.dumps(geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa"))
-    
-    return json.dumps(geraResponse("Busca bem sucedida", "Resultado encontrado", "linhas", linhas))
-
+        if linhas == []:
+            return geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa")
         
-@app.route("/busca-atualizacoes/all", methods=["POST"])
-def buscaTodasAtualizacoesPOST():
-    body = request.get_json()
-    linhas = base_teste.buscaTodas(body["id"])
+        return geraResponse("Busca bem sucedida", "Resultado encontrado", "linhas", linhas)
 
-    if(linhas == [] or "id" not in body):
-        return json.dumps(geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa"))
-    
-    return json.dumps(geraResponse("Busca bem sucedida", "Resultado encontrado", "linhas", linhas))
+class BuscaUltimaAtualizacaoGET(Resource):
+    def get(self, id):
+        linha = base_teste.buscaUltima(id)
 
+        if(linha == []):
+            return geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa")
 
-@app.route("/busca-atualizacoes/last/<id>/", methods=["GET"])
-def buscaUltimaAtualizacaoGET(id):
-    linha = base_teste.buscaUltima(id)
+        return geraResponse("Busca bem sucedida", "Resultado encontrado", "linha", linha)
 
-    if(linha == []):
-        return json.dumps(geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa"))
+class buscaTodasAtualizacoesPOST(Resource):
+    def post(self):
+        body = request.get_json()
+        
 
-    return json.dumps(geraResponse("Busca bem sucedida", "Resultado encontrado", "linha", linha))
+        if  "id" not in body:
+            return geraResponse("Busca mal sucedida", "Deve contar o ID.")
+        else:
+            linhas = base_teste.buscaTodas(body["id"])
+        
+            if linhas == []:
+                return geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa")
+            
+            return geraResponse("Busca bem sucedida", "Resultado encontrado", "linhas", linhas)
 
-@app.route("/busca-atualizacoes/last", methods=["POST"])
-def buscaUltimaAtualizacaoPOST():
-    body = request.get_json()
-    linha = base_teste.buscaUltima(body["id"])
+class buscaUltimaAtualizacaoPOST(Resource):
+    def post(self):
+        body = request.get_json()
 
-    if(linha == [] or "id" not in body):
-        return json.dumps(geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa"))
+        if  "id" not in body:
+            return geraResponse("Busca mal sucedida", "Deve contar o ID.")
+        else:
+            linha = base_teste.buscaUltima(body["id"])
+            
+            if linha == []:
+                return geraResponse("Busca mal sucedida", "Nenhum resultado encontrado para essa pesquisa")
 
-    return json.dumps(geraResponse("Busca bem sucedida", "Resultado encontrado", "linha", linha))
+            return geraResponse("Busca bem sucedida", "Resultado encontrado", "linha", linha)
+
 
 def geraResponse(status, mensagem, nome_do_conteudo=False, conteudo=False):
     response = {}
@@ -57,6 +65,12 @@ def geraResponse(status, mensagem, nome_do_conteudo=False, conteudo=False):
     
     return response
 
-if __name__ == "__main__":
-    app.run(debug=True)
 
+api.add_resource(BuscaTodasAtualizacoesGET, '/busca-atualizacoes/all/<id>/')
+api.add_resource(BuscaUltimaAtualizacaoGET, '/busca-atualizacoes/last/<id>/')
+api.add_resource(buscaTodasAtualizacoesPOST, '/busca-atualizacoes/all/')
+api.add_resource(buscaUltimaAtualizacaoPOST, '/busca-atualizacoes/last/')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
