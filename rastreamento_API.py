@@ -63,6 +63,11 @@ def geraResponse(status, mensagem, nome_do_conteudo=False, conteudo=False):
     if(nome_do_conteudo and conteudo):
         response[nome_do_conteudo] = conteudo
     
+    response = app.make_response(response)
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'POST, GET'
+    response.headers['Access-Control-Allow-Headers'] = '*'
+    
     return response
 
 
